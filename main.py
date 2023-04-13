@@ -3,6 +3,7 @@ import shutil
 import tarfile
 
 
+#создание нового файла
 def create_file(file_name):
     try:
         with open(file_name, 'w') as file:
@@ -12,6 +13,7 @@ def create_file(file_name):
         print(f'Error creating file {file_name}: {e}')
 
 
+#список директорий и файлов
 def list_files_and_directories(path):
     contents = os.listdir(path)
     files_and_directories = [name for name in contents if os.path.isdir(os.path.join(path, name)) or os.path.isfile(os.path.join(path, name))]
@@ -19,6 +21,7 @@ def list_files_and_directories(path):
     print(files_and_directories)
 
 
+#копирование файлов
 def copy_file(source_file, destination_file):
     try:
         with open(source_file, 'rb') as fsrc:
@@ -34,19 +37,29 @@ def copy_file(source_file, destination_file):
         print(f'Error: {e}')
 
 
+#перемещение файла
 def move_file(src_path, dest_path):
-    """
-    Move a file from src_path to dest_path.
-    """
     shutil.move(src_path, dest_path)
 
 
+#создание снапшота
 def create_snapshot(snapshot_name, root_path):
     with tarfile.open(snapshot_name, "w:gz") as tar:
         tar.add(root_path, arcname=os.path.basename(root_path))
 
 
+#бэкап
 def backup(source_dir, dest_dir):
     shutil.copytree(source_dir, dest_dir)
+
+
+#создание новой директории
+def create_directory(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print(f"Directory {path} created.")
+    else:
+        print(f"Directory {path} already exists.")
+
 
 
