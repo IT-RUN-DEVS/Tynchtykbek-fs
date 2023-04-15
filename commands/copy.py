@@ -1,6 +1,6 @@
 import shutil
 
-def copy_file(source_file, destination_file):
+def copy(source_file, destination_file):
     try:
         with open(source_file, 'rb') as fsrc:
             with open(destination_file, 'wb') as fdst:
@@ -16,5 +16,3 @@ def copy_file(source_file, destination_file):
 
 
 #перемещение файла
-def move_file(src_path, dest_path):
-    shutil.move(src_path, dest_path)

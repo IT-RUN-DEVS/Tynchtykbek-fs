@@ -2,6 +2,9 @@ import os
 
 #cоздание нового файла
 def create_file(file_name):
+    if os.path.exists(file_name):
+        print('Файл с таким именем уже существует! Задайте другое имя!')
+        return
     try:
         with open(file_name, 'w') as file:
             file.write('')
@@ -10,10 +13,3 @@ def create_file(file_name):
         print(f'Error creating file {file_name}: {e}')
 
 
-#создание новой директории
-def create_directory(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
-        print(f"Directory {path} created.")
-    else:
-        print(f"Directory {path} already exists.")

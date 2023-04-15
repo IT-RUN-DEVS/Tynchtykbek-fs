@@ -1,21 +1,9 @@
+import datetime
 import os
 import shutil
-import datetime
-
-#создание снапшота
-def create_file_snapshot(source_path, dest_path):
-    if not os.path.isfile(source_path):
-        raise ValueError(f"{source_path} is not a valid file path.")
-
-    snapshot_dir = os.path.dirname(dest_path)
-    if not os.path.exists(snapshot_dir):
-        os.makedirs(snapshot_dir)
-
-    shutil.copyfile(source_path, dest_path)
 
 
-#бэкап
-def create_backup(source_path, backup_dir):
+def backup(source_path, backup_dir):
     if not os.path.exists(source_path):
         raise ValueError(f"{source_path} is not a valid file or directory path.")
 

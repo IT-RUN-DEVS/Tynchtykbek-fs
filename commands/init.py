@@ -1,6 +1,6 @@
 import os
 
-def initialize_file_system(root_dir, subdirs=[], files={}):
+def init(root_dir, subdirs=[], files={}):
     if not os.path.exists(root_dir):
         os.makedirs(root_dir)
 
