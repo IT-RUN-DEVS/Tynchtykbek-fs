@@ -1,18 +1,17 @@
+import os.path
 import shutil
 
-def copy(source_file, destination_file):
-    try:
-        with open(source_file, 'rb') as fsrc:
-            with open(destination_file, 'wb') as fdst:
-                # читаем содержимое исходного файла по блокам
-                while True:
-                    block = fsrc.read(1024)
-                    if not block:
-                        break
-                    # записываем блок в целевой файл
-                    fdst.write(block)
-    except FileNotFoundError as e:
-        print(f'Error: {e}')
+def copy(source_file_path, destination_file_path):
+    if not os.path.exists(source_file_path):
+        print('Файла с таким именем не существует!')
 
+    if not os.path.exists(destination_file_path):
+        os.makedirs(destination_file_path)
 
-#перемещение файла
+    if os.path.isfile(source_file_path):
+        shutil.copy(source_file_path, destination_file_path)
+        print("Файл успешно скопирован!")
+
+    if os.path.isdir(destination_file_path):
+        shutil.copytree(source_file_path, destination_file_path)
+        print('Папка успешно скопирована!')

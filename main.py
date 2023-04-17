@@ -4,7 +4,7 @@ import os
 
 
 def main():
-    commands_dir = os.path.join(os.path.dirname(__file__), 'commands')
+    commands_dir = os.path.join(os.path.dirname(__file__), '')
     command_files = [
         os.path.splitext(f)[0] for f in os.listdir(commands_dir)
         if os.path.isfile(os.path.join(commands_dir, f)) and f.endswith('.py')

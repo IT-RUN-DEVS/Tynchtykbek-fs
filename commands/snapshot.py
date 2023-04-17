@@ -1,15 +1,22 @@
 import os
-import shutil
+import json
+import datetime
 
-#создание снапшота
-def snapshot(source_path, dest_path):
-    if not os.path.isfile(source_path):
-        raise ValueError(f"{source_path} is not a valid file path.")
-
-    snapshot_dir = os.path.dirname(dest_path)
-    if not os.path.exists(snapshot_dir):
-        os.makedirs(snapshot_dir)
-
-    shutil.copyfile(source_path, dest_path)
-
-
+def snapshot(directory, output_file):
+    metadata = {
+        'timestamp': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'directory': directory,
+        'files': []
+    }
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            path = os.path.join(root, file)
+            file_metadata = {
+                'path': path,
+                'size': os.path.getsize(path),
+                'created': datetime.datetime.fromtimestamp(os.path.getctime(path)).strftime('%Y-%m-%d %H:%M:%S'),
+                'modified': datetime.datetime.fromtimestamp(os.path.getmtime(path)).strftime('%Y-%m-%d %H:%M:%S')
+            }
+            metadata['files'].append(file_metadata)
+    with open(output_file, 'w') as f:
+        json.dump(metadata, f, indent=4)
