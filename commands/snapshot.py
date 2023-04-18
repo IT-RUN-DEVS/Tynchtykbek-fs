@@ -20,3 +20,9 @@ def snapshot(directory, output_file):
             metadata['files'].append(file_metadata)
     with open(output_file, 'w') as f:
         json.dump(metadata, f, indent=4)
+
+    if not os.path.exists(output_file):
+        print('Снапшот создан успешно!')
+        return
+
+    print(f'Снапшот успешно обновлен!')

@@ -10,3 +10,4 @@ def move(src_path, dest_path):
         os.makedirs(dest_path)
 
     shutil.move(src_path, dest_path)
+    print('Файл успешно перемещен!')

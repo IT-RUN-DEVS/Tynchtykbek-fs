@@ -24,3 +24,5 @@ def backup(source_path, backup_dir):
         backup_dirname = f"{dirname}.{timestamp}.bak"
         backup_path = os.path.join(backup_dir, backup_dirname)
         shutil.copytree(source_path, backup_path)
+
+    print('Резервная копия успешно создана!')
