@@ -3,7 +3,7 @@ import os
 import shutil
 
 
-def backup(source_path, backup_dir):
+def backup(source_path: str, backup_dir: str) -> str:
     if not os.path.exists(source_path):
         print(f"{source_path} не является допустимым путем к файлу или директории")
         return

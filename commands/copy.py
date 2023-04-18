@@ -1,7 +1,7 @@
 import os.path
 import shutil
 
-def copy(src, dest):
+def copy(src: str, dest: str) -> str:
     if not os.path.exists(src):
         print('Файла с таким именем не существует!')
 

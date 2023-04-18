@@ -1,7 +1,7 @@
 import os
 
 #cоздание нового файла
-def create_file(file_name):
+def create_file(file_name: str) -> str:
     if not os.path.exists(file_name):
         with open(file_name, 'w') as file:
             file.write('')

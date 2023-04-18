@@ -2,7 +2,7 @@ import shutil
 import os
 
 
-def move(src_path, dest_path):
+def move(src_path: str, dest_path: str) -> str:
     if not os.path.exists(src_path):
         print(f"{src_path} не является допустимым путем к файлу или каталогу.")
 

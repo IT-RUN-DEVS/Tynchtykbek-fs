@@ -2,7 +2,12 @@ import os
 import json
 import datetime
 
-def snapshot(directory, output_file):
+def snapshot(directory: str, output_file: str) -> str:
+    if not os.path.exists(directory):
+        print('Файла или директории не существует!')
+
+        return
+
     metadata = {
         'timestamp': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'directory': directory,
@@ -21,8 +26,4 @@ def snapshot(directory, output_file):
     with open(output_file, 'w') as f:
         json.dump(metadata, f, indent=4)
 
-    if not os.path.exists(output_file):
-        print('Снапшот создан успешно!')
-        return
-
-    print(f'Снапшот успешно обновлен!')
+    print('Снапшот создан успешно!')

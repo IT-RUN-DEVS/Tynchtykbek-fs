@@ -1,0 +1,78 @@
+{
+    "timestamp": "2023-04-18 15:35:30",
+    "directory": "commands",
+    "files": [
+        {
+            "path": "commands\\backup.py",
+            "size": 1012,
+            "created": "2023-04-15 14:45:22",
+            "modified": "2023-04-18 15:10:01"
+        },
+        {
+            "path": "commands\\copy.py",
+            "size": 351,
+            "created": "2023-04-14 16:15:52",
+            "modified": "2023-04-18 15:06:57"
+        },
+        {
+            "path": "commands\\create_file.py",
+            "size": 274,
+            "created": "2023-04-14 16:14:36",
+            "modified": "2023-04-18 15:18:27"
+        },
+        {
+            "path": "commands\\directory_list.py",
+            "size": 251,
+            "created": "2023-04-14 16:15:02",
+            "modified": "2023-04-15 15:02:50"
+        },
+        {
+            "path": "commands\\init.py",
+            "size": 639,
+            "created": "2023-04-14 18:20:09",
+            "modified": "2023-04-17 17:52:52"
+        },
+        {
+            "path": "commands\\move.py",
+            "size": 392,
+            "created": "2023-04-15 14:46:06",
+            "modified": "2023-04-18 15:18:27"
+        },
+        {
+            "path": "commands\\snapshot.py",
+            "size": 1053,
+            "created": "2023-04-14 16:17:37",
+            "modified": "2023-04-18 15:34:54"
+        },
+        {
+            "path": "commands\\__pycache__\\backup.cpython-311.pyc",
+            "size": 1795,
+            "created": "2023-04-17 17:38:08",
+            "modified": "2023-04-17 17:38:08"
+        },
+        {
+            "path": "commands\\__pycache__\\copy.cpython-311.pyc",
+            "size": 1022,
+            "created": "2023-04-18 15:06:08",
+            "modified": "2023-04-18 15:06:08"
+        },
+        {
+            "path": "commands\\__pycache__\\create_file.cpython-311.pyc",
+            "size": 1230,
+            "created": "2023-04-15 17:32:28",
+            "modified": "2023-04-15 17:32:28"
+        },
+        {
+            "path": "commands\\__pycache__\\init.cpython-311.pyc",
+            "size": 1408,
+            "created": "2023-04-17 17:52:16",
+            "modified": "2023-04-17 17:52:16"
+        },
+        {
+            "path": "commands\\__pycache__\\snapshot.cpython-311.pyc",
+            "size": 2254,
+            "created": "2023-04-18 15:35:17",
+            "modified": "2023-04-18 15:35:17"
+        }
+    ]
+}
